@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+  </head>
+  <body>
+    <script>
+      //   차시 1 : 변수 만들기
+
+      // 사용자 이름 (문자열)
+      let userName = "이가람";
+
+      // 나이 (숫자)
+      let age = 25;
+
+      // 학생 여부 (불리언)
+      let isStudent = false;
+
+      // 취미 목록 (배열)
+      let hobbies = ["게임", "코딩"];
+
+      // 의도적으로 비워둔 값 (null)
+      let emptyVal = null;
+
+      //   차시 2 : 타입 확인하기
+      console.log(`---차시 2---`);
+
+      // 변수 타입 확인
+      console.log("userName 타입:", typeof userName);
+      console.log("age 타입:", typeof age);
+      console.log("isStudent 타입:", typeof isStudent);
+      console.log("hobbies 타입:", typeof hobbies);
+      console.log("emptyVal 타입:", typeof emptyVal); // object (JS 특징)
+
+      //   차시 3 : 삼항 연산자 활용하기
+      console.log(`---차시 3---`);
+      // 나이에 따른 신분 구분
+      let status = age >= 18 ? "성인" : "미성년자";
+
+      // 자기소개 출력
+      console.log("안녕하세요.");
+      console.log(`이름은 ${userName}입니다.`);
+      console.log(`나이는 ${age}살입니다.`);
+      console.log(`현재 신분은 ${status}입니다.`);
+      console.log(`취미는 ${hobbies.join(", ")} 입니다.`);
+    </script>
+  </body>
+</html>
