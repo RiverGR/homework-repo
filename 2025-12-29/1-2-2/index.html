@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 장바구니 배열
+      let cart = [];
+
+      // 1. 상품 추가 (push)
+      cart.push(
+        { name: "사과", price: 3000 },
+        { name: "바나나", price: 2000 },
+        { name: "오렌지", price: 4000 }
+      );
+
+      // 2. 특정 상품 삭제 (splice + indexOf)
+      let removeName = "바나나";
+      let index = cart.map((item) => item.name).indexOf(removeName);
+
+      if (index !== -1) {
+        cart.splice(index, 1);
+      }
+
+      // 3. 상품 목록 출력 (join)
+      let names = cart.map((item) => item.name).join(", ");
+      console.log("상품 목록:", names);
+
+      // 4. 가격순 정렬 (sort + 비교 함수)
+      cart.sort((a, b) => a.price - b.price);
+
+      console.log("장바구니:", cart);
+    </script>
+  </body>
+</html>
