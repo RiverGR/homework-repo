@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. 학생 객체 생성
+      const student = {
+        name: "홍길동",
+        age: 20,
+        scores: {
+          math: 90,
+          english: 85,
+        },
+      };
+
+      // 2. 동적 속성 접근 함수
+      function getProperty(obj, key) {
+        return obj[key];
+      }
+
+      // 3. 평균 점수 계산 함수
+      function getAverageScore(scores) {
+        return (scores.math + scores.english) / 2;
+      }
+
+      // 동적 접근 확인
+      console.log(getProperty(student, "name")); // "홍길동"
+
+      // 평균 점수 출력
+      console.log(getAverageScore(student.scores)); // 87.5
+
+      // 4. 깊은 복사 후 수정
+      const copiedStudent = {
+        name: student.name,
+        age: student.age,
+        scores: {
+          math: student.scores.math,
+          english: student.scores.english,
+        },
+      };
+
+      copiedStudent.name = "김철수";
+
+      // 원본 유지 확인
+      console.log(student.name); // "홍길동"
+      console.log(copiedStudent.name); // "김철수"
+    </script>
+  </body>
+</html>
