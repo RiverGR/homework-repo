@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="alert" class="box hidden">알림 대기중...</div>
+    <script>
+      // 1. 아이디가 alert 인 박스 선택
+      const Box = document.getElementById("alert");
+
+      // 2. hidden 클래스 제거 (보이게 하기)
+      Box.classList.remove("hidden");
+
+      // 3. error 클래스 추가 (빨간색 스타일)
+      Box.classList.add("error");
+
+      // 4. 텍스트를 "오류 발생"으로 변경
+      Box.textContent = "오류 발생";
+    </script>
+  </body>
+</html>

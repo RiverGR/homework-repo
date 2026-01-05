@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- HTML -->
+    <div id="container">
+      <button id="profile-button" class="btn primary">클릭!</button>
+    </div>
+
+    <div id="result"></div>
+
+    <!-- JavaScript -->
+    <script>
+      // 요소를 선택한다.
+      const button = document.querySelector("#profile-button");
+      const result = document.querySelector("#result");
+
+      button.addEventListener("click", () => {
+        // tagName, id, className
+        const tagName = button.tagName;
+        const id = button.id;
+        const className = button.className;
+
+        // parentElement, children
+        const parent = button.parentElement;
+        const childrenCount = parent.children.length;
+
+        // querySelector vs querySelectorAll
+        const oneBtn = document.querySelector(".btn");
+        const allBtns = document.querySelectorAll(".btn");
+
+        // 결과 : 동적 출력
+        result.textContent = `
+            tagName: ${tagName}
+            id: ${id}
+            className: ${className}
+            parent: ${parent.tagName}
+            `;
+      });
+    </script>
+  </body>
+</html>

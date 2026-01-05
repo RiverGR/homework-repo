@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- HTML -->
+    <div class="profile-card" data-user-id="RiverGR">
+      <p class="profile-name">이름</p>
+      <button id="changedark">바꾸기</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      const fileCard = document.querySelector(".profile-card");
+      const fileName = document.querySelector(".profile-name");
+      const button = document.querySelector("#changedark");
+
+      button.addEventListener("click", () => {
+        // 이름 변경하기
+        fileName.textContent = "이가람";
+
+        // 다크모드
+        fileCard.classList.toggle("dark-mode");
+        console.log(fileCard.className);
+
+        // data-user-id 읽고 출력
+        document.body.textContent = fileCard.dataset.userId;
+        console.log(fileCard.dataset.userId);
+
+        // 태그 생성 후 추가
+        const newTag = document.createElement("p");
+        newTag.textContent = "프로필 업데이트";
+        fileCard.appendChild(newTag);
+      });
+    </script>
+  </body>
+</html>
