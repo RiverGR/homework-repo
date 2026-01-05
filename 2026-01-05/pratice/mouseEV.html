@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="test-btn">버튼</button>
+
+    <script>
+      const btn = document.getElementById("test-btn");
+
+      // 클릭 이벤트
+      btn.addEventListener("click", () => {
+        alert("클릭됨!");
+      });
+
+      // 마우스 오버
+      btn.addEventListener("mouseover", () => {
+        console.log("마우스 위로!");
+      });
+
+      // 마우스 아웃
+      btn.addEventListener("mouseout", () => {
+        console.log("마우스 나감!");
+      });
+    </script>
+  </body>
+</html>

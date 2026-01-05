@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="www.google.com" id="google">링크</a>
+
+    <script>
+      // 이동 막기
+      const link = document.getElementById("google");
+
+      link.addEventListener("click", (e) => {
+        e.preventDefault(); // 기본 동작 막기
+        alert("링크 이동 차단");
+      });
+
+      // 우클릭 막기(문서 전체)
+      document.addEventListener("contextmenu", (e) => {
+        e.preventDefault(); // 우클릭 차단
+        alert("우클릭 금지");
+      });
+    </script>
+  </body>
+</html>

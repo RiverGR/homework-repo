@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">버튼</button>
+
+    <script>
+      const btn = document.getElementById("btn");
+
+      // 클릭 핸들러
+      function handleClick() {
+        console.log("Clicked!");
+      }
+
+      // 이벤트 등록하기
+      btn.addEventListener("click", handleClick);
+
+      // 5초 후 이벤트 제거하기
+      setTimeout(() => {
+        btn.removeEventListener("click", handleClick);
+        console.log("이벤트가 제거되었습니다.");
+      }, 5000);
+    </script>
+  </body>
+</html>

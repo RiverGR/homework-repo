@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="msg-input" placeholder="내용 입력" />
+
+    <script>
+      const input = document.getElementById("msg-input");
+
+      input.addEventListener("input", (e) => {
+        const length = e.target.value.length;
+        console.log("현재 글자 수: ", length);
+      });
+    </script>
+  </body>
+</html>

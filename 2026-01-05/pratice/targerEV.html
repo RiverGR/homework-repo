@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="outer" class="p-4-bg-gray-200">
+      <button id="inner">버튼</button>
+    </div>
+
+    <script>
+      const outer = document.getElementById("outer");
+
+      outer.addEventListener("click", (e) => {
+        console.log("target: ", e.target);
+        console.log("currentTarget: ", e.currentTarget);
+
+        if (e.target === e.currentTarget) {
+          console.log("배경(outer)를 클릭함");
+        } else {
+          console.log("버튼(inner)을 클릭함");
+        }
+      });
+    </script>
+  </body>
+</html>

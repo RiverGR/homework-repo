@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box1">
+      <div class="box2">
+        <div class="box3">Click Me</div>
+      </div>
+    </div>
+
+    <script>
+      const box1 = document.querySelector(".box1");
+      const box2 = document.querySelector(".box2");
+      const box3 = document.querySelector(".box3");
+
+      box1.addEventListener("click", () => {
+        console.log("Box 1 클릭!");
+      });
+
+      box2.addEventListener("click", (e) => {
+        console.log("Box 2 클릭!");
+        e.stopPropagation(); // 버블링 멈춤(Box1 실행 안하게)
+      });
+
+      box3.addEventListener("click", () => {
+        console.log("Box 3 클릭!");
+      });
+    </script>
+  </body>
+</html>

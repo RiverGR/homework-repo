@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #list {
+        padding: 20px;
+        background: eee;
+      }
+
+      li {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+
+    <script>
+      const list = document.getElementById("list");
+
+      list.addEventListener("click", (e) => {
+        // li가 아니면 클릭할 때 무시한다.
+        if (e.target.tagName !== "LI") return;
+
+        // 클릭된 li 텍스트 출력
+        console.log(e.target.textContent);
+      });
+
+      list.addEventListener("click", function (e) {
+        // closest를 쓰면 li 내부 요소를 클릭해도 동작(안전)
+        const li = e.target.closest("li");
+
+        if (!li || !list.contains(li)) return;
+
+        console.log("선택된 숫자: ", li.textContent);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="chat-input" placeholder="메시지 입력" />
+
+    <script>
+      const input = document.getElementById("chat-input");
+
+      input.addEventListener("keydown", (event) => {
+        // 누른 키를 콘솔에 출력
+        console.log(event.key);
+
+        // enter 키 감지하기
+        if (event.key === "Enter") {
+          alert("전송!");
+        }
+      });
+    </script>
+  </body>
+</html>
