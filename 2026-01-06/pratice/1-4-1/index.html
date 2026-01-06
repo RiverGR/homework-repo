@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const users = [
+        {
+          name: "Kim",
+          profile: { bio: "Hi" },
+        },
+        {
+          name: "Lee",
+          profile: null, // 정보 없음
+        },
+      ];
+
+      users.forEach((user) => {
+        const bio = user.profile?.bio ?? "소개 없음";
+        const html = `<div>${user.name}: ${bio}</div>`;
+        console.log(html);
+      });
+    </script>
+  </body>
+</html>
