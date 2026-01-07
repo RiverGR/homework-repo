@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const x = "Global";
+
+      function print() {
+        console.log(x); // 어디서 태어났는지?
+      }
+
+      function check() {
+        const x = "Local";
+        print(); // 여기서 호출
+      }
+
+      check(); // 결과
+    </script>
+  </body>
+</html>

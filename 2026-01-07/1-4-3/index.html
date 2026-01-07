@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function createCounter() {
+        let count = 0; // private 변수 (외부 접근 불가)
+
+        return {
+          increment() {
+            count += 1;
+            return count;
+          },
+          decrement() {
+            count -= 1;
+            return count;
+          },
+          getValue() {
+            return count;
+          },
+          // 선택 사항
+          reset() {
+            count = 0;
+            return count;
+          },
+        };
+      }
+
+      // ===== 실행 테스트 =====
+      const counter1 = createCounter();
+      const counter2 = createCounter();
+
+      console.log(counter1.increment()); // 1
+      console.log(counter1.increment()); // 2
+      console.log(counter1.getValue()); // 2
+
+      console.log(counter2.increment()); // 1 (독립적)
+      console.log(counter2.getValue()); // 1
+
+      // private 확인
+      console.log(counter1.count); // undefined
+    </script>
+  </body>
+</html>

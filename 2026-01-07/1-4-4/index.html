@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const hero = {
+        name: "Batman",
+        call() {
+          console.log(this.name);
+        },
+      };
+
+      // 1. this 손실 (메서드를 분리하면 일반 함수 호출이 됨)
+      // → strict mode에서 this는 undefined
+      const stolenCall = hero.call;
+      stolenCall(); // undefined (출력은 하지 않음)
+
+      // 2. bind로 this 고정
+      const fixedCall = hero.call.bind(hero);
+      fixedCall(); // Batman
+
+      // 3. setTimeout 안에서 this가 잃어버리는 예제
+      setTimeout(hero.call, 1000); // this 손실 (출력 없음)
+    </script>
+  </body>
+</html>
