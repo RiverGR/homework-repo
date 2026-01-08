@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const cart = [
+        { name: "Apple", price: 1000, qty: 3 },
+        { name: "Banana", price: 2000, qty: 1 },
+        { name: "Melon", price: 5000, qty: 2 },
+      ];
+
+      // 초기값 0 필수!
+      const totalPrice = cart.reduce(
+        (acc, cur) => acc + cur.price * cur.qty,
+        0
+      );
+
+      console.log(totalPrice);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const items = [
+        { name: "Gum", price: 500 },
+        { name: "Book", price: 12000 },
+        { name: "Milk", price: 3500 },
+      ];
+
+      const expensive = items.filter((item) => item.price >= 3000);
+
+      console.log(expensive);
+    </script>
+  </body>
+</html>

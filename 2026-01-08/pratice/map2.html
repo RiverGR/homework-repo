@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const users = [
+        { firstName: "Gildong", lastName: "Hong", age: 25 },
+        { firstName: "Chulsoo", lastName: "Kim", age: 15 },
+        { firstName: "Younghee", lastName: "Lee", age: 30 },
+      ];
+
+      const uiModels = users.map((user) => ({
+        fullname: `${user.firstName} ${user.lastName}`,
+        isAdult: user.age >= 18,
+      }));
+
+      console.log(uiModels);
+    </script>
+  </body>
+</html>

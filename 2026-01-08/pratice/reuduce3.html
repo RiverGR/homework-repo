@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const team = [
+        { name: "Bob", role: "Developer" },
+        { name: "Alice", role: "Designer" },
+        { name: "Charlie", role: "Developer" },
+      ];
+
+      // 초기값은 빈 객체 {}
+      const grouped = team.reduce((acc, cur) => {
+        // 해당 role 그룹 엇으면 배열로 초기화시키기
+        if (!acc[cur.role]) {
+          acc[cur.role] = [];
+        }
+
+        acc[cur.role].push(cur);
+
+        return acc;
+      }, {});
+
+      console.log(grouped);
+    </script>
+  </body>
+</html>
