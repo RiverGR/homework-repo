@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 콜백 기반 함수
+      const orderPizza = (type, cb) =>
+        setTimeout(() => cb(null, { type }), 500);
+
+      const makeDough = (order, cb) => setTimeout(() => cb(null, order), 500);
+
+      const bakePizza = (dough, cb) =>
+        setTimeout(() => cb(null, { name: dough.type }), 500);
+
+      // Promise
+      const orderPizzaAsync = (type) =>
+        new Promise((res, rej) =>
+          orderPizza(type, (e, r) => (e ? rej(e) : res(r)))
+        );
+
+      const makeDoughAsync = (order) =>
+        new Promise((res, rej) =>
+          makeDough(order, (e, r) => (e ? rej(e) : res(r)))
+        );
+
+      const bakePizzaAsync = (dough) =>
+        new Promise((res, rej) =>
+          bakePizza(dough, (e, r) => (e ? rej(e) : res(r)))
+        );
+
+      // async / await 활용
+      async function deliverPizza() {
+        try {
+          const pizza = await bakePizzaAsync(
+            await makeDoughAsync(await orderPizzaAsync("Pepperoni"))
+          );
+          console.log("배달 완료!");
+        } catch (err) {
+          console.error("에러:", err.message);
+        }
+      }
+
+      deliverPizza();
+    </script>
+  </body>
+</html>
