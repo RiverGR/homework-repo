@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function orderPizza(menu) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            try {
+              if (!menu) throw new Error("주문 오류"); // throw
+              resolve(`${menu} 피자 주문 완료`);
+            } catch (err) {
+              reject(err); // throw를 Promise reject로 연결
+            }
+          }, 1000);
+        });
+      }
+
+      async function kiosk() {
+        try {
+          const result = await orderPizza(null); // 일부러 실패하기(재료 : null로)
+          console.log(result);
+        } catch (err) {
+          console.log("죄송합니다. 재료가 소진되었습니다.");
+        } finally {
+          console.log("이용해 주셔서 감사합니다");
+        }
+      }
+
+      kiosk();
+    </script>
+  </body>
+</html>

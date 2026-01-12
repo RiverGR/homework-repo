@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  min-height: 100vh;
+
+  background-image: linear-gradient(to bottom, #f8f9ff, #eef1ff, #fdf2f8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 360px;
+  padding: 20px;
+
+  background-image: linear-gradient(to bottom, #fff7fb, #eef1ff);
+
+  border: 1px solid #d2d7ff;
+  border-radius: 18px;
+
+  box-shadow: 0 10px 20px #e5e7ff, 0 2px 6px #f0e9ff;
+}
+
+.container::before {
+  content: "Todo-List";
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+#todo-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#todo-input:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+#add-btn {
+  width: 100%;
+  height: 40px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+
+  background-color: #e0e7ff;
+  color: #4a69be;
+
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#add-btn:hover {
+  background-color: #c7d2fe;
+  color: #1e40af;
+}
+
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 18px;
+}
+
+#todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 14px;
+  margin-bottom: 12px;
+
+  border: 1px solid #c7ccff;
+  border-radius: 12px;
+
+  background-image: linear-gradient(to right, #eef1ff, #fdf2f8);
+
+  font-size: 14px;
+}
+
+#todo-list li span {
+  flex: 1;
+  margin-right: 12px;
+}
+
+#todo-list li button {
+  border: none;
+  background-color: #f472b6;
+  color: white;
+
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#todo-list li button:hover {
+  background-color: #ec4899;
+}
+
+#clear-btn {
+  width: 100%;
+  height: 40px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fde2e2;
+  color: #b91c1c;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#clear-btn:hover {
+  background-color: #fca5a5;
+  color: white;
+}
