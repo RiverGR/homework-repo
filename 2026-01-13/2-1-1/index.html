@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sum(n) {
+        let total = 0;
+
+        for (let i = 1; i <= n; i++) {
+          total += i;
+        }
+
+        return total;
+      }
+
+      function sumEven(n) {
+        let total = 0;
+
+        for (let i = 1; i <= n; i++) {
+          if (i % 2 === 0) total += i;
+        }
+
+        return total;
+      }
+
+      function sumOdd(n) {
+        let total = 0;
+
+        for (let i = 1; i <= n; i++) {
+          if (i % 2 !== 0) total += i;
+        }
+
+        return total;
+      }
+
+      console.log(sum(10));
+      console.log(sumEven(10));
+      console.log(sumOdd(10));
+    </script>
+  </body>
+</html>
