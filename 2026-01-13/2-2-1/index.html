@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [5, 12, 8, 130, 44, 3];
+
+      const result = numbers
+        .filter((n) => n >= 10)
+        .map((n) => n * 2)
+        .sort((a, b) => a - b);
+      console.log(result);
+    </script>
+  </body>
+</html>
