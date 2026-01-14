@@ -7,16 +7,25 @@
   </head>
   <body>
     <script>
+      // 문자열을 거꾸로 뒤집기
       function reverse(str) {
-        return str.split("").reverse().join("");
+        return str
+          .split("") // 문자 배열로 변환
+          .reverse() // 순서 뒤집기
+          .join(""); // 다시 문자열로
       }
 
+      // 특정 문자를 모두 제거
       function removeAll(str, char) {
-        return str.split(char).join("");
+        return str
+          .split(char) // 기준 문자로 분리
+          .join(""); // 다시 합치면서 제거
       }
 
+      // 숫자를 3자리 문자열로 변환
       function padThree(num) {
-        return String(num).padStart(3, "0");
+        return String(num) // 문자열로 변환
+          .padStart(3, "0"); // 앞을 0으로 채움
       }
 
       console.log(reverse("hello"));

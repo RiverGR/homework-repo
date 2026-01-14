@@ -7,39 +7,42 @@
   </head>
   <body>
     <script>
+      // 1부터 n까지 모든 수의 합
       function sum(n) {
         let total = 0;
 
         for (let i = 1; i <= n; i++) {
-          total += i;
+          total += i; // 누적 합
         }
 
         return total;
       }
 
+      // 1부터 n까지 짝수의 합
       function sumEven(n) {
         let total = 0;
 
         for (let i = 1; i <= n; i++) {
-          if (i % 2 === 0) total += i;
+          if (i % 2 === 0) total += i; // 짝수만 더함
         }
 
         return total;
       }
 
+      // 1부터 n까지 홀수의 합
       function sumOdd(n) {
         let total = 0;
 
         for (let i = 1; i <= n; i++) {
-          if (i % 2 !== 0) total += i;
+          if (i % 2 !== 0) total += i; // 홀수만 더함
         }
 
         return total;
       }
 
-      console.log(sum(10));
-      console.log(sumEven(10));
-      console.log(sumOdd(10));
+      console.log(sum(10)); // 전체 합
+      console.log(sumEven(10)); // 짝수 합
+      console.log(sumOdd(10)); // 홀수 합
     </script>
   </body>
 </html>
