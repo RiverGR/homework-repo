@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 모든 약수를 반환한다.
+      function getDivisors(n) {
+        const divisors = [];
+
+        for (let i = 1; i <= n; i++) {
+          if (n % i === 0) {
+            divisors.push(i);
+          }
+        }
+
+        return divisors;
+      }
+
+      // 약수의 개수를 세는 코드
+      function countDivisors(n) {
+        return getDivisors(n).length;
+      }
+
+      // 약수 총합
+      function sumDivisors(n) {
+        return getDivisors(n).reduce((sum, v) => sum + v, 0);
+      }
+
+      console.log(getDivisors(12));
+      console.log(countDivisors(12));
+      console.log(sumDivisors(12));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1 ~ 6 사이 랜덤 정수 반환
+      function Dice() {
+        return Math.floor(Math.random() * 6) + 1;
+      }
+
+      // 절대값 차이 반환
+      function getScore(a, b) {
+        return Math.abs(a - b);
+      }
+
+      // 실행
+      const dice1 = Dice();
+      const dice2 = Dice();
+
+      console.log("주사위:", dice1, dice2);
+      console.log("score:", getScore(dice1, dice2));
+    </script>
+  </body>
+</html>
