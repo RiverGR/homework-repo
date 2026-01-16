@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function fetchPosts(id) {
+        try {
+          const res = await fetch(
+            `https://jsonplaceholder.typicode.com/posts/${id}`
+          );
+
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status} ${res.statusText}`); // 에러 메시지 출력하기
+          }
+
+          // 성공할 때 콘솔 출력하기
+          const data = await res.json();
+          console.log("성공:", data);
+          return data;
+        } catch (err) {
+          console.log("실패:", err.message);
+          return null;
+        }
+      }
+
+      // post 호출
+      fetchPosts(1);
+
+      // URL 에러
+      fetchPosts(9999);
+    </script>
+  </body>
+</html>
