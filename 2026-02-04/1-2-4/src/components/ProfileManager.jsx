@@ -56,7 +56,7 @@ function ProfileManager() {
 
       {/* Profile */}
       {!isEditing ? (
-        // ✅ 조회 모드
+        // 조회 모드
         <div>
           <h3 style={{ margin: "0 0 8px" }}>프로필 (조회)</h3>
           <p>
@@ -68,7 +68,7 @@ function ProfileManager() {
           </button>
         </div>
       ) : (
-        // ✅ 수정 모드
+        // 수정 모드
         <div>
           <h3 style={{ margin: "0 0 8px" }}>프로필 (수정)</h3>
 
