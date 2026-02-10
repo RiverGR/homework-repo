@@ -1,0 +1,39 @@
+/* src/index.css */
+
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(1200px 600px at 20% 20%, #0b2a5e 0%, transparent 55%),
+    radial-gradient(900px 500px at 80% 10%, #1a0b3d 0%, transparent 55%),
+    linear-gradient(180deg, #050814 0%, #020617 60%, #020617 100%);
+  color: #fff;
+}
+
+/* ✅ 브라우저 정중앙 배치 + 여백 */
+.app {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+}
